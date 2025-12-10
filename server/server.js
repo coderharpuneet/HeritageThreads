@@ -26,22 +26,20 @@ mongoose
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
-app.use(cors());
-// app.use(
-//   cors({
-//     origin: "http://localhost:5173",
-//     methods: ["GET", "POST", "DELETE", "PUT"],
-//     allowedHeaders: [
-//       "Content-Type",
-//       "Authorization",
-//       "Cache-Control",
-//       "Expires",
-//       "Pragma",
-//     ],
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://heritage-threads-phi.vercel.app/", 
+    methods: ["GET", "POST", "DELETE", "PUT"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Cache-Control",
+      "Expires",
+      "Pragma",
+    ],
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("Backend Application working!!");
